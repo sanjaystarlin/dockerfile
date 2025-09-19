@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Readmission Predictor</title>
+</head>
+<body>
+    <h2>🏥 Patient Readmission Prediction</h2>
+    <form action="/predict" method="post">
+        Age: <input type="number" name="age"><br><br>
+        Blood Pressure: <input type="number" name="bp"><br><br>
+        Cholesterol: <input type="number" name="cholesterol"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is defined %}
+        <h3>Prediction: {{ 'Readmitted' if prediction==1 else 'Not Readmitted' }}</h3>
+    {% endif %}
+</body>
+</html>
